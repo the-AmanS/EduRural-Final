@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - EduRural</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family:'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        .nav-link.active {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 600;
+        }
+        /* Notification animation */
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translateY(-20px); }
+            10%, 90% { opacity: 1; transform: translateY(0); }
+        }
+        .notification-active {
+            animation: fadeInOut 3s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-30">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Nav Links -->
+                <div class="flex items-center space-x-8">
+                    <div class="flex-shrink-0 flex items-center">
+                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        <span class="text-xl font-bold ml-2 text-gray-800">EduRural</span>
+                    </div>
+                    <nav class="hidden md:flex space-x-4">
+                        <a href="index.html" class="nav-link text-gray-500 hover:text-green-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="quizzes.html" class="nav-link text-gray-500 hover:text-green-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Quizzes</a>
+                        <a href="leaderboard.html" class="nav-link text-gray-500 hover:text-green-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Leaderboard</a>
+                        <a href="assignments.html" class="nav-link active text-gray-500 hover:text-green-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Assignments</a>
+                        <a href="badges.html" class="nav-link text-gray-500 hover:text-green-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Badges</a>
+                    </nav>
+                </div>
+                <!-- User Profile and Logout -->
+                <div class="flex items-center space-x-4">
+                     <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-semibold">ENG</div>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        <span class="ml-2 text-sm font-medium text-gray-700">Aman Singh</span>
+                        <span class="ml-2 text-xs font-semibold text-yellow-800 bg-yellow-200 px-2 py-0.5 rounded-full">student</span>
+                    </div>
+                    <a href="../login.html" title="Logout">
+                        <svg class="w-6 h-6 text-gray-500 hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- ASSIGNMENTS SECTION -->
+        <section id="assignments" class="page-content">
+            <h1 class="text-3xl font-bold text-gray-800">My Assignments</h1>
+            <p class="mt-1 text-gray-600 mb-6">View and submit your assignments</p>
+            <div class="space-y-4">
+                <!-- Assignment Item -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                     <div class="flex flex-col sm:flex-row justify-between items-start">
+                        <div class="flex items-center mb-4 sm:mb-0">
+                            <div class="text-green-600 flex-shrink-0"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Math Problem Set #3</h3>
+                                <p class="text-sm text-gray-500 mt-1">Solve the quadratic equations and show your work. Include step-by-step solutions for each problem.</p>
+                            </div>
+                        </div>
+                        <div class="text-left sm:text-right flex-shrink-0">
+                             <span class="text-xs font-semibold bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Pending</span>
+                             <p class="text-sm text-gray-500 mt-1">25 points</p>
+                        </div>
+                     </div>
+                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4">
+                        <p class="text-sm text-gray-500 mb-2 sm:mb-0">Overdue &bull; <span class="text-red-500">Not submitted</span></p>
+                        <button class="submit-assignment-btn bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition w-full sm:w-auto">Submit Assignment</button>
+                     </div>
+                </div>
+                 <!-- Assignment Item -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                     <div class="flex flex-col sm:flex-row justify-between items-start">
+                        <div class="flex items-center mb-4 sm:mb-0">
+                            <div class="text-green-600 flex-shrink-0"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-semibold text-gray-800">Science Lab Report</h3>
+                                <p class="text-sm text-gray-500 mt-1">Write a detailed report on the photosynthesis experiment conducted in class. Include observations, data, and conclusions.</p>
+                            </div>
+                        </div>
+                        <div class="text-left sm:text-right flex-shrink-0">
+                             <span class="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded-full">Submitted</span>
+                             <p class="text-sm text-gray-500 mt-1">30 points</p>
+                        </div>
+                     </div>
+                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4">
+                        <p class="text-sm text-gray-500 mb-2 sm:mb-0">Overdue &bull; <span class="text-green-500">Submitted</span></p>
+                        <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition w-full sm:w-auto">View Submission</button>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Success Notification -->
+    <div id="notification" class="fixed top-5 right-5 bg-green-500 text-white py-3 px-5 rounded-lg shadow-lg flex items-center opacity-0 z-50 pointer-events-none">
+        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span id="notification-message"></span>
+    </div>
+
+    <!-- Assignment Submission Modal -->
+    <div id="submission-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg p-6 relative">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-xl font-bold text-gray-800" id="modal-assignment-title">Assignment Submission</h2>
+            <p class="text-sm text-gray-500 mt-1" id="modal-assignment-desc">Submit your work for the selected assignment.</p>
+            <form id="assignment-form" class="mt-4 space-y-4">
+                <div>
+                    <label for="submission-text" class="block text-sm font-medium text-gray-700 mb-1">Your Submission</label>
+                    <textarea id="submission-text" rows="6" class="w-full border-gray-300 rounded-md shadow-sm focus:border-green-500 focus:ring-green-500" placeholder="Enter your assignment submission here..."></textarea>
+                </div>
+                 <div class="flex items-center justify-between p-3 border border-dashed border-gray-300 rounded-md">
+                    <input type="file" id="file-upload" class="hidden">
+                    <label for="file-upload" class="cursor-pointer flex items-center text-sm text-gray-600">
+                        <svg class="w-5 h-5 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        Choose File
+                    </label>
+                    <span id="file-name" class="text-sm text-gray-500">No file chosen</span>
+                    <button type="button" class="flex items-center text-sm font-medium text-green-600 hover:text-green-800">
+                       <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                       Upload File
+                    </button>
+                </div>
+                <div class="flex justify-end space-x-3 pt-2">
+                    <button type="button" class="close-modal-btn bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition">Cancel</button>
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition">Submit Assignment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- MODAL ELEMENTS ---
+            const allModals = document.querySelectorAll('.fixed.inset-0');
+            const submissionModal = document.getElementById('submission-modal');
+            const submitAssignmentBtns = document.querySelectorAll('.submit-assignment-btn');
+            
+            // --- NOTIFICATION ELEMENTS ---
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            
+            // --- FORM ELEMENTS ---
+            const assignmentForm = document.getElementById('assignment-form');
+            const fileUpload = document.getElementById('file-upload');
+            const fileNameSpan = document.getElementById('file-name');
+            
+            // --- MODAL CONTENT ELEMENTS ---
+            const modalAssignmentTitle = document.getElementById('modal-assignment-title');
+            const modalAssignmentDesc = document.getElementById('modal-assignment-desc');
+
+
+            // --- FUNCTIONS ---
+            
+            // General Modal Logic
+            function closeModal() {
+                allModals.forEach(modal => modal.classList.add('hidden'));
+            }
+            
+            document.querySelectorAll('.close-modal-btn').forEach(btn => {
+                btn.addEventListener('click', closeModal);
+            });
+
+            allModals.forEach(modal => {
+                 modal.addEventListener('click', function(e) {
+                    if(e.target === modal) {
+                        closeModal();
+                    }
+                });
+            });
+
+            // Notification Logic
+            function showNotification(message) {
+                notificationMessage.textContent = message;
+                notification.classList.add('notification-active');
+                
+                setTimeout(() => {
+                    notification.classList.remove('notification-active');
+                    notification.classList.add('opacity-0');
+                }, 3000);
+            }
+
+            // Assignment Modal
+            submitAssignmentBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const assignmentCard = e.currentTarget.closest('.bg-white');
+                    const title = assignmentCard.querySelector('h3').textContent;
+                    const desc = assignmentCard.querySelector('p.text-sm').textContent;
+                    
+                    modalAssignmentTitle.textContent = title;
+                    modalAssignmentDesc.textContent = desc;
+
+                    submissionModal.classList.remove('hidden')
+                });
+            });
+
+            if(fileUpload) {
+                fileUpload.addEventListener('change', function() {
+                    fileNameSpan.textContent = this.files[0] ? this.files[0].name : 'No file chosen';
+                });
+            }
+
+            // Form Submission Handlers
+            assignmentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                closeModal();
+                showNotification('Assignment submitted successfully!');
+            });
+
+        });
+    </script>
+</body>
+</html>
